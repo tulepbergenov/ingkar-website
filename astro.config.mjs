@@ -1,4 +1,5 @@
 // @ts-check
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 const PORT = 4000;
@@ -9,5 +10,8 @@ export default defineConfig({
     port: PORT,
     open: true,
     host: true,
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
