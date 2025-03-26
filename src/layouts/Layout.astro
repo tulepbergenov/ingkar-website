@@ -1,5 +1,6 @@
 ---
-import "../styles/index.css";
+import SkipLink from "@/components/SkipLink.astro";
+import "@/styles/index.css";
 ---
 
 <!doctype html>
@@ -21,7 +22,8 @@ import "../styles/index.css";
     class="h-full bg-white text-base font-normal text-balance text-black [text-rendering:optimizeSpeed] [&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-thumb]:bg-blue-500 [&::-webkit-scrollbar-track]:bg-transparent"
   >
     <div class="isolate flex h-full flex-col overflow-x-hidden">
-      <main class="flex-auto">
+      <SkipLink />
+      <main id="main" class="flex-auto" aria-label="Main content">
         <slot />
       </main>
     </div>
