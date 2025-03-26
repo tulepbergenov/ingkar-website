@@ -1,15 +1,15 @@
 # ingkar-website
- 
-## tasks
 
-[] - design
-[] - semantic
-[] - meta
-[] - open graph
-[] - application/ld+json
-[] - mobile first/mobile-friendly-test
-[] - lighthouse
-[] - seo inspector
-[] - optimize imgs
-[] - PageSpeed Insights
-[] - sitemap, robots
+## Tasks
+
+- [ ] Design
+- [ ] HTML Semantics
+- [ ] Meta Tags
+- [ ] Open Graph Protocol
+- [ ] JSON-LD Schema
+- [ ] Mobile Responsiveness
+- [ ] Lighthouse Audit
+- [ ] SEO Optimization
+- [ ] Image Optimization
+- [ ] Performance Analysis
+- [ ] Site Configuration
