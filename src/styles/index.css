@@ -1,1 +1,113 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-Thin.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-ThinItalic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-Light.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-LightItalic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-Regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-RegularItalic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-Medium.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-MediumItalic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-Bold.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-BoldItalic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-Black.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "FK Grotesk Mono";
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/fk-grotesk-mono/FKGroteskMonoTrial-BlackItalic.woff2")
+    format("woff2");
+}
+
+@theme {
+  --font-fk-grotesk-mono: "FK Grotesk Mono", monospace;
+}
