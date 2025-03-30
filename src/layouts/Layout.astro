@@ -1,5 +1,4 @@
 ---
-import SkipLink from "@/components/SkipLink.astro";
 import "@/styles/index.css";
 ---
 
@@ -19,13 +18,8 @@ import "@/styles/index.css";
     <meta http-equiv="Content-Language" content="en" />
   </head>
   <body
-    class="font-fk-grotesk-mono h-full bg-white text-base font-normal text-balance text-black [text-rendering:optimizeSpeed] [&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-thumb]:bg-blue-500 [&::-webkit-scrollbar-track]:bg-transparent"
+    class="font-fk-grotesk-mono h-full bg-white text-[20px] leading-[90%] font-normal text-balance text-black [text-rendering:optimizeSpeed]"
   >
-    <div class="isolate flex h-full flex-col overflow-x-hidden">
-      <SkipLink />
-      <main id="main" class="flex-auto" aria-label="Main content">
-        <slot />
-      </main>
-    </div>
+    <slot />
   </body>
 </html>

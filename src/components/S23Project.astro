@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="mt-[150px]">
+  <div class="container">
+    <div>
+      <div class="grid grid-cols-12 items-start gap-x-[20px] uppercase">
+        <div class="group relative col-span-3 flex w-fit" data-s23-open="false">
+          <button
+            type="button"
+            class="relative cursor-pointer font-bold active:tracking-[0.5em] [@media(hover:hover)]:hover:tracking-[0.5em]"
+          >
+            <span class="absolute">S23</span></button
+          >
+          <svg
+            width="179"
+            height="155"
+            viewBox="0 0 179 155"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-[30px] left-[40px] hidden group-data-[s23-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M1 0.5L91.5 28L178 154" stroke="white"></path>
+            </g>
+          </svg>
+          <div
+            class="absolute top-[calc(100%+300px)] left-[calc(100%+288px)] z-[1] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[s23-open=true]:block"
+          >
+            custom font was developed as a part of the project
+          </div>
+          <svg
+            width="446"
+            height="270"
+            viewBox="0 0 446 270"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-[calc(100%+20px)] left-[40px] hidden group-data-[s23-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M0.5 1L249.5 27L445 269.5" stroke="white"></path>
+            </g>
+          </svg>
+
+          <div
+            class="absolute top-[calc(100%+190px)] left-[calc(100%+29px)] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[s23-open=true]:block"
+          >
+            S23 is a conceptual sustainable brand the brand's aesthetic is
+            heavily inspired by graffiti culture
+          </div>
+        </div>
+        <p class="col-span-4">product design, <br /> visual identity</p>
+        <p class="col-span-2">university</p>
+        <p class="col-span-3 text-end">2022</p>
+      </div>
+      <div class="mt-[24px] grid grid-cols-12 gap-x-[20px] gap-y-[28px]">
+        <div
+          class="col-span-full flex min-h-[264px] items-center justify-between bg-black"
+        >
+          <div class="flex items-center">
+            <div class="h-[194px] w-[258px] overflow-hidden">
+              <Image
+                src={"/images/s23/4.webp"}
+                width={248}
+                height={350}
+                alt="S23"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="h-[244px] w-[240px] overflow-hidden">
+              <Image
+                src={"/images/s23/5.webp"}
+                width={248}
+                height={350}
+                alt="S23"
+                class="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="h-[215px] w-[516px] overflow-hidden">
+            <Image
+              src={"/images/s23/6.svg"}
+              width={516}
+              height={215}
+              alt="S23"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="col-span-3 h-[350px]">
+          <Image
+            src={"/images/s23/1.jpg"}
+            width={248}
+            height={350}
+            alt="S23"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="col-span-3 h-[350px]">
+          <Image
+            src={"/images/s23/2.jpg"}
+            width={248}
+            height={350}
+            alt="S23"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="col-span-6 h-[350px]">
+          <Image
+            src={"/images/s23/3.gif"}
+            width={518}
+            height={350}
+            alt="S23"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const s23Open = document.querySelectorAll<HTMLElement>("[data-s23-open]");
+
+  s23Open.forEach((s23) => {
+    s23.addEventListener("click", () => {
+      const isOpen = s23.dataset.s23Open === "true";
+      s23.dataset.s23Open = (!isOpen).toString();
+    });
+  });
+</script>

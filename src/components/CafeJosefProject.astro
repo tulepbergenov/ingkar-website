@@ -1,0 +1,154 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="mt-[140px]">
+  <div class="container">
+    <div>
+      <div class="grid grid-cols-12 items-start gap-x-[20px] uppercase">
+        <div
+          class="group relative col-span-3 flex w-max"
+          data-cafe-josef-open="false"
+        >
+          <button
+            type="button"
+            class="cursor-pointer font-bold active:tracking-[0.5em] [@media(hover:hover)]:hover:tracking-[0.5em]"
+          >
+            <span class="absolute w-max">CAFE JOSEF</span>
+          </button>
+          <svg
+            width="376"
+            height="194"
+            viewBox="0 0 376 194"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-[calc(100%+24px)] left-[82px] hidden group-data-[cafe-josef-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M1 1L145 114L375 193" stroke="white"></path>
+            </g>
+          </svg>
+
+          <div
+            class="absolute top-[calc(100%+200px)] left-[calc(100%+650px)] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[cafe-josef-open=true]:block"
+          >
+            <p>the name josef is connected with the founder of the place</p>
+            <p>key visual - a hat- is a tribute to this figure</p>
+          </div>
+          <svg
+            width="685"
+            height="165"
+            viewBox="0 0 685 165"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-[calc(100%+20px)] left-[90px] hidden group-data-[cafe-josef-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M1 1L377 25L684.5 164.5" stroke="white"></path>
+            </g>
+          </svg>
+          <div
+            class="absolute top-[calc(100%+230px)] left-[calc(100%+300px)] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[cafe-josef-open=true]:block"
+          >
+            <p>cafe josef is a hideaway spot in the centre of prague</p>
+            <p>
+              visual identity combines both the history behind the place and
+              adds a contemporary feel it is utilized by the sign and the chosen
+              font which include geometric sharp edges and
+            </p>
+          </div>
+        </div>
+        <p class="col-span-4">visual identity</p>
+        <p class="col-span-4">university</p>
+        <p class="col-span-1 text-end">2023</p>
+      </div>
+      <div class="mt-[24px] grid grid-cols-12 gap-x-[20px] gap-y-[32px]">
+        <div class="col-span-full h-[292px] overflow-hidden">
+          <img
+            src="/images/cafe-josef/2.gif"
+            width="1042"
+            height="292"
+            alt="Cafe Josef"
+            class="h-auto w-full object-cover"
+          />
+        </div>
+        <div class="col-span-8 flex flex-col items-end pt-[100px]">
+          <img
+            src="/images/cafe-josef/3.svg"
+            width="209"
+            height="45"
+            alt="Cafe Josef"
+          />
+          <img
+            src="/images/cafe-josef/4.svg"
+            width="696"
+            height="152"
+            alt="Cafe Josef"
+          />
+        </div>
+        <div class="col-span-4 h-[338px] overflow-hidden">
+          <img
+            src="/images/cafe-josef/1.gif"
+            width="338"
+            height="338"
+            alt="Cafe Josef"
+            class="h-auto w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-[70px] flex min-h-[370px] items-center justify-between bg-black px-[90px]"
+    >
+      <div class="flex items-center gap-x-[12px]">
+        <div class="h-[209px] w-[146px] overflow-hidden">
+          <Image
+            src={"/images/cafe-josef/8.jpg"}
+            width={146}
+            height={209}
+            alt="Cafe Josef poster"
+          />
+        </div>
+        <div class="h-[209px] w-[294px] overflow-hidden">
+          <Image
+            src={"/images/cafe-josef/7.jpg"}
+            width={294}
+            height={209}
+            alt="Cafe Josef poster"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-x-[12px]">
+        <div class="h-[209px] w-[147px] overflow-hidden">
+          <Image
+            src={"/images/cafe-josef/6.jpg"}
+            width={147}
+            height={209}
+            alt="Cafe Josef poster"
+          />
+        </div>
+        <div class="h-[209px] w-[147px] overflow-hidden">
+          <Image
+            src={"/images/cafe-josef/5.jpg"}
+            width={147}
+            height={209}
+            alt="Cafe Josef poster"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const cafeJosefOpen = document.querySelectorAll<HTMLElement>(
+    "[data-cafe-josef-open]"
+  );
+
+  cafeJosefOpen.forEach((cafeJosef) => {
+    cafeJosef.addEventListener("click", () => {
+      const isOpen = cafeJosef.dataset.cafeJosefOpen === "true";
+      cafeJosef.dataset.cafeJosefOpen = (!isOpen).toString();
+    });
+  });
+</script>

@@ -1,0 +1,74 @@
+<section>
+  <div class="container">
+    <div>
+      <div class="grid grid-cols-12 items-start gap-x-[20px] uppercase">
+        <div
+          class="group relative col-span-3 flex w-max items-center justify-center"
+          data-nexus-open="false"
+        >
+          <button
+            type="button"
+            class="cursor-pointer font-bold active:tracking-[0.5em] [@media(hover:hover)]:hover:tracking-[0.5em]"
+          >
+            <span class="absolute w-max">NEXUS</span>
+          </button>
+          <svg
+            width="376"
+            height="194"
+            viewBox="0 0 376 194"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-[calc(100%+24px)] left-[82px] hidden group-data-[nexus-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M1 1L145 114L375 193" stroke="white"></path>
+            </g>
+          </svg>
+
+          <div
+            class="absolute top-[calc(100%+200px)] left-[calc(100%+650px)] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[nexus-open=true]:block"
+          >
+            <p>the name josef is connected with the founder of the place</p>
+            <p>key visual - a hat- is a tribute to this figure</p>
+          </div>
+          <svg
+            width="685"
+            height="165"
+            viewBox="0 0 685 165"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-[calc(100%+20px)] left-[90px] hidden group-data-[nexus-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M1 1L377 25L684.5 164.5" stroke="white"></path>
+            </g>
+          </svg>
+          <div
+            class="absolute top-[calc(100%+230px)] left-[calc(100%+300px)] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[nexus-open=true]:block"
+          >
+            <p>cafe josef is a hideaway spot in the centre of prague</p>
+            <p>
+              visual identity combines both the history behind the place and
+              adds a contemporary feel it is utilized by the sign and the chosen
+              font which include geometric sharp edges and
+            </p>
+          </div>
+        </div>
+        <p class="col-span-4 max-w-[196px]">web design, social mdeia</p>
+        <p class="col-span-4">university</p>
+        <p class="col-span-1 text-end">2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const nexusOpen = document.querySelectorAll<HTMLElement>("[data-nexus-open]");
+
+  nexusOpen.forEach((nexus) => {
+    nexus.addEventListener("click", () => {
+      const isOpen = nexus.dataset.nexusOpen === "true";
+      nexus.dataset.nexusOpen = (!isOpen).toString();
+    });
+  });
+</script>

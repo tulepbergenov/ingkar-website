@@ -1,0 +1,21 @@
+<button
+  class="inline-block cursor-pointer border border-black p-[24px] text-[20px] leading-[90%] font-normal text-black lowercase focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 active:font-bold [@media(hover:hover)]:hover:font-bold"
+  data-to-the-top-btn
+>
+  to the top
+</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    };
+
+    const button = document.querySelector("[data-to-the-top-btn]");
+    button?.addEventListener("click", scrollToTop);
+  });
+</script>

@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="mt-[100px]">
+  <div class="container">
+    <div>
+      <div class="grid grid-cols-4 items-start gap-x-[20px] uppercase">
+        <div
+          class="group relative flex w-fit items-center justify-center align-top"
+          data-auru-open="false"
+        >
+          <button
+            type="button"
+            class="cursor-pointer font-bold active:tracking-[0.5em] [@media(hover:hover)]:hover:tracking-[0.5em]"
+          >
+            <span class="absolute">AURU</span>
+          </button>
+          <svg
+            width="477"
+            height="52"
+            viewBox="0 0 477 52"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute -top-[14px] left-[40px] hidden group-data-[auru-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M0.5 37.5L341.5 0.5L476.5 51.5" stroke="white"></path>
+            </g>
+          </svg>
+          <div
+            class="absolute top-[calc(100%+40px)] left-[calc(100%+302px)] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[auru-open=true]:block"
+          >
+            linocut technique was used
+          </div>
+          <svg
+            width="193"
+            height="105"
+            viewBox="0 0 193 105"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-[calc(100%+30px)] left-[40px] hidden group-data-[auru-open=true]:block"
+          >
+            <g style="mix-blend-mode:difference">
+              <path d="M0.5 1L156 40.5122L192.5 104.5" stroke="white"></path>
+            </g>
+          </svg>
+          <div
+            class="absolute top-[calc(100%+140px)] left-[calc(100%+150px)] hidden w-[310px] border border-black bg-white p-[24px] lowercase group-data-[auru-open=true]:block"
+          >
+            type design for an upcoming movie my role was to develop a font
+            based on the logo
+          </div>
+        </div>
+        <p>type design</p>
+        <p>FILM</p>
+        <p class="text-end">2024</p>
+      </div>
+      <div class="mt-[40px] grid grid-cols-3 gap-[20px]">
+        <div class="h-auto w-full overflow-hidden">
+          <img
+            src={"/images/auru/poster.gif"}
+            width={339}
+            height={424}
+            alt="Auru poster"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col justify-between">
+          <div class="h-[152px] w-full overflow-hidden">
+            <img
+              src={"/images/auru/text.gif"}
+              width={378}
+              height={152}
+              alt={"Auru typography"}
+            />
+          </div>
+          <div class="h-[190px] w-full overflow-hidden">
+            <Image
+              src={"/images/auru/auru-title.jpg"}
+              width={338}
+              height={190}
+              alt={"Auru title"}
+            />
+          </div>
+        </div>
+        <div>
+          <img
+            src="/images/auru/auru-gif.gif"
+            alt="Auru typography"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const auruOpen = document.querySelectorAll<HTMLElement>("[data-auru-open]");
+
+  auruOpen.forEach((auru) => {
+    auru.addEventListener("click", () => {
+      const isOpen = auru.dataset.auruOpen === "true";
+      auru.dataset.auruOpen = (!isOpen).toString();
+    });
+  });
+</script>

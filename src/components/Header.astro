@@ -1,0 +1,99 @@
+---
+const { title } = Astro.props;
+---
+
+<header class="fixed top-0 left-0 z-20 w-full mix-blend-difference">
+  <div class="container">
+    <div
+      class="flex items-center justify-between py-[28px] md:translate-y-[64px] md:py-0"
+    >
+      <p class="max-w-[140px] font-bold uppercase md:hidden">{title}</p>
+      <button
+        type="button"
+        data-menu-btn
+        data-menu-btn-open="false"
+        aria-label="Open menu"
+        class="inline-block cursor-pointer text-[42px] leading-[90%] font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g style="mix-blend-mode:difference">
+            <path
+              d="M13.1974 8.93849H21.1398V13.435H13.1974V21.3354H8.70087V13.435H0.758441V8.93849H8.70087V0.954033H13.1974V8.93849Z"
+              fill="white"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div
+  data-menu-open="false"
+  class="fixed top-0 left-0 z-20 h-svh w-screen overflow-hidden data-[menu-open=false]:pointer-events-none data-[menu-open=false]:invisible"
+>
+  <nav class="container h-full">
+    <ul
+      class="relative flex h-full w-fit flex-col gap-y-[50px] bg-white py-[58px] pr-[173px] before:absolute before:top-0 before:right-0 before:-z-[1] before:h-full before:w-screen before:bg-white before:content-['']"
+    >
+      <li class="flex w-fit">
+        <button
+          type="button"
+          data-menu-btn
+          data-menu-btn-open="true"
+          aria-label="Close menu"
+          class="inline-block w-fit cursor-pointer text-[42px] leading-[90%] font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
+        >
+          -
+        </button>
+      </li>
+      <li class="flex w-fit">
+        <a
+          href="/about"
+          class="inline-block w-fit text-[42px] leading-[90%] font-bold uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
+          >About</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggleButtons = document.querySelectorAll("[data-menu-btn]");
+    const menu = document.querySelector("[data-menu-open]");
+    const nav = menu?.querySelector("nav");
+    const menuContent = nav?.querySelector("ul");
+
+    const openMenu = () => {
+      const scrollBarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
+      document.body.classList.add("overflow-hidden");
+      menu?.setAttribute("data-menu-open", "true");
+    };
+
+    const closeMenu = () => {
+      document.body.style.paddingRight = "";
+      document.body.classList.remove("overflow-hidden");
+      menu?.setAttribute("data-menu-open", "false");
+    };
+
+    menuToggleButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("data-menu-btn-open") === "true";
+        isOpen ? closeMenu() : openMenu();
+      });
+    });
+
+    nav?.addEventListener("click", (event) => {
+      if (!menuContent?.contains(event.target as Node)) {
+        closeMenu();
+      }
+    });
+  });
+</script>
