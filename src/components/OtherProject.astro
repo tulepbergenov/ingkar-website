@@ -12,10 +12,11 @@ import { Image } from "astro:assets";
           <p class="col-span-2">------</p>
           <p class="col-span-3 text-end">2023-25</p>
         </div>
-        <div data-horizontal-wrapper class="pt-[42px]">
-          <div data-horizontal class="flex w-max">
+        <div class="pt-[42px]">
+          <div data-slideshow-wrapper class="relative h-[556px]">
             <div
-              class="mr-[28px] grid h-[556px] w-[1056px] shrink-0 grid-cols-12 gap-x-[20px]"
+              data-slide
+              class="pointer-events-none absolute inset-0 grid h-[556px] w-[1056px] shrink-0 grid-cols-12 gap-x-[20px] opacity-0"
             >
               <div
                 class="col-span-7 flex flex-col items-center justify-between"
@@ -126,7 +127,8 @@ import { Image } from "astro:assets";
               </div>
             </div>
             <div
-              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+              data-slide
+              class="pointer-events-none absolute inset-0 h-[556px] w-[1056px] shrink-0 overflow-hidden opacity-0"
             >
               <Image
                 src={"/images/other/1.png"}
@@ -137,7 +139,8 @@ import { Image } from "astro:assets";
               />
             </div>
             <div
-              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+              data-slide
+              class="pointer-events-none absolute inset-0 h-[556px] w-[1056px] shrink-0 overflow-hidden opacity-0"
             >
               <Image
                 src={"/images/other/2.png"}
@@ -148,7 +151,8 @@ import { Image } from "astro:assets";
               />
             </div>
             <div
-              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+              data-slide
+              class="pointer-events-none absolute inset-0 h-[556px] w-[1056px] shrink-0 overflow-hidden opacity-0"
             >
               <Image
                 src={"/images/other/3.png"}
@@ -159,7 +163,8 @@ import { Image } from "astro:assets";
               />
             </div>
             <div
-              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+              data-slide
+              class="pointer-events-none absolute inset-0 h-[556px] w-[1056px] shrink-0 overflow-hidden opacity-0"
             >
               <Image
                 src={"/images/other/4.png"}
@@ -169,7 +174,17 @@ import { Image } from "astro:assets";
                 class="h-full w-full object-cover"
               />
             </div>
-            <div class="mr-[28px] h-[556px] w-[300px] shrink-0 overflow-hidden">
+            <div
+              data-slide
+              class="pointer-events-none absolute inset-0 flex h-[556px] w-[1056px] shrink-0 items-center justify-center overflow-hidden opacity-0"
+            >
+              <Image
+                src={"/images/other/5.gif"}
+                alt="Other project "
+                width={556}
+                height={556}
+                class="h-auto w-[556px] object-cover"
+              />
             </div>
           </div>
         </div>
@@ -184,25 +199,53 @@ import { Image } from "astro:assets";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const wrapper = document.querySelector("[data-horizontal-wrapper]");
-  const scroller = document.querySelector("[data-horizontal]");
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.querySelector<HTMLElement>(
+      "[data-slideshow-wrapper]"
+    );
+    const slides = wrapper?.querySelectorAll<HTMLElement>("[data-slide]");
 
-  if (wrapper && scroller) {
-    const totalWidth = scroller.scrollWidth;
-    const viewportWidth = window.innerWidth;
-    const scrollDistance = totalWidth - viewportWidth;
+    if (!wrapper || !slides || slides.length === 0) return;
 
-    gsap.to(scroller, {
-      x: () => `-${scrollDistance}px`,
-      ease: "none",
+    // Показать первый слайд
+    gsap.set(slides[0], {
+      opacity: 1,
+      pointerEvents: "auto",
+    });
+
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: wrapper,
-        start: "top top",
-        end: () => `+=${scrollDistance}`,
+        start: "top-=100 top",
+        end: `+=${(slides.length - 1) * window.innerHeight}`, // без лишней высоты
         scrub: true,
         pin: true,
-        anticipatePin: 1,
       },
     });
-  }
+
+    slides.forEach((slide, index) => {
+      const nextSlide = slides[index + 1];
+
+      if (nextSlide) {
+        tl.to(
+          slide,
+          {
+            opacity: 0,
+            pointerEvents: "none",
+            duration: 0.1,
+          },
+          index
+        );
+        tl.to(
+          nextSlide,
+          {
+            opacity: 1,
+            pointerEvents: "auto",
+            duration: 0.1,
+          },
+          index + 0.001
+        );
+      }
+    });
+  });
 </script>
