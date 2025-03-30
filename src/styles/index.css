@@ -116,52 +116,18 @@
   @apply mx-auto max-w-[1448px] px-[20px] lg:px-[196px];
 }
 
-@layer components {
-  .gif-wrapper {
-    position: relative;
+@layer base {
+  body {
+    cursor:
+      url("/images/cursor.png") 12 12,
+      auto;
   }
 
-  .gif-frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    opacity: 0;
-    object-fit: cover;
-  }
-
-  .gif-frame:nth-child(1) {
-    animation: showFrame 3.2s steps(1) infinite;
-    animation-delay: 0s;
-  }
-
-  .gif-frame:nth-child(2) {
-    animation: showFrame 3.2s steps(1) infinite;
-    animation-delay: 0.8s;
-  }
-
-  .gif-frame:nth-child(3) {
-    animation: showFrame 3.2s steps(1) infinite;
-    animation-delay: 1.6s;
-  }
-
-  .gif-frame:nth-child(4) {
-    animation: showFrame 3.2s steps(1) infinite;
-    animation-delay: 2.4s;
-  }
-
-  @keyframes showFrame {
-    0% {
-      opacity: 1;
-    }
-    24.9% {
-      opacity: 1;
-    }
-    25% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
+  a,
+  button,
+  [role="button"] {
+    cursor:
+      url("/images/c-pointer.png") 12 12,
+      pointer !important;
   }
 }

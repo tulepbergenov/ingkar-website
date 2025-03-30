@@ -17,18 +17,19 @@ import Layout from "@/layouts/Layout.astro";
 <Layout>
   <div class="flex h-full flex-col">
     <Header title="Ingkar Abdrakhman" />
-    <section
-      class="fixed top-0 left-0 -z-[1] hidden h-screen w-screen lg:block"
-    >
-      <div class="container">
+    <section class="">
+      <div id="fixed-container" class="container">
         <div class="relative">
-          <p
-            class="absolute top-[300px] right-[calc(100%+28px)] max-w-[140px] font-bold uppercase"
+          <a
+            href="/"
+            style="left: var(--container-padding)"
+            class="left-fixed fixed top-[300px] max-w-[140px] font-bold uppercase"
           >
             Ingkar Abdrakhman
-          </p>
+          </a>
           <p
-            class="absolute top-[300px] left-[calc(100%+28px)] max-w-[140px] font-bold uppercase"
+            style="right: var(--container-padding)"
+            class="right-fixed fixed top-[300px] max-w-[140px] font-bold uppercase"
           >
             graphic designer
           </p>
@@ -64,3 +65,23 @@ import Layout from "@/layouts/Layout.astro";
     <Footer />
   </div>
 </Layout>
+
+<script>
+  const updateFixedOffsets = (): void => {
+    const container = document.getElementById("fixed-container");
+    if (!container) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const left = containerRect.left;
+    const right = window.innerWidth - containerRect.right;
+
+    const leftFixed = document.querySelector<HTMLElement>(".left-fixed");
+    const rightFixed = document.querySelector<HTMLElement>(".right-fixed");
+
+    leftFixed?.style.setProperty("left", `${left + 30}px`);
+    rightFixed?.style.setProperty("right", `${right + 30}px`);
+  };
+
+  window.addEventListener("DOMContentLoaded", updateFixedOffsets);
+  window.addEventListener("resize", updateFixedOffsets);
+</script>
