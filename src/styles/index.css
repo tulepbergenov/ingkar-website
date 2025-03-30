@@ -119,15 +119,14 @@
 @layer base {
   body {
     cursor:
-      url("/images/cursor.png") 12 12,
+      url("/images/cursor.png") 6 6,
       auto;
   }
 
   a,
-  button,
-  [role="button"] {
+  button {
     cursor:
       url("/images/c-pointer.png") 12 12,
-      pointer !important;
+      auto;
   }
 }
