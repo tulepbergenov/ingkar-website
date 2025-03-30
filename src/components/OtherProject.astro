@@ -3,119 +3,206 @@ import { Image } from "astro:assets";
 ---
 
 <section class="mt-[70px]">
-  <div class="container">
+  <div class="container overflow-hidden">
     <div>
-      <div class="grid grid-cols-12 gap-x-[20px] uppercase">
-        <p class="col-span-3 font-bold">other</p>
-        <p class="col-span-4">visual identity,<br /> illustration, etc</p>
-        <p class="col-span-2">------</p>
-        <p class="col-span-3 text-end">2023-25</p>
-      </div>
-      <div class="mt-[42px] grid grid-cols-12 gap-x-[20px]">
-        <div class="col-span-7 flex flex-col items-center justify-between">
-          <div class="h-auto w-[340px] overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/title.jpg"}
-              alt="The Floss"
-              width={1476}
-              height={1024}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[320px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/mockup-chocolate.jpg"}
-              alt="Other project 1"
-              width={608}
-              height={320}
-              class="h-full w-full object-cover"
-            />
-          </div>
+      <div>
+        <div class="grid grid-cols-12 gap-x-[20px] uppercase">
+          <p class="col-span-3 font-bold">other</p>
+          <p class="col-span-4">visual identity,<br /> illustration, etc</p>
+          <p class="col-span-2">------</p>
+          <p class="col-span-3 text-end">2023-25</p>
         </div>
-        <div class="col-span-5 grid grid-cols-3 gap-x-[10px] gap-y-[22px]">
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/1.jpg"}
-              alt="Other project 1"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/2.jpg"}
-              alt="Other project 2"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/3.jpg"}
-              alt="Other project 3"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/4.jpg"}
-              alt="Other project 4"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/5.jpg"}
-              alt="Other project 5"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/6.jpg"}
-              alt="Other project 6"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/7.jpg"}
-              alt="Other project 7"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/8.jpg"}
-              alt="Other project 8"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="h-[170px] w-full overflow-hidden">
-            <Image
-              src={"/images/other/the-floss/9.jpg"}
-              alt="Other project 9"
-              width={136}
-              height={170}
-              class="h-full w-full object-cover"
-            />
+        <div data-horizontal-wrapper class="pt-[42px]">
+          <div data-horizontal class="flex w-max">
+            <div
+              class="mr-[28px] grid h-[556px] w-[1056px] shrink-0 grid-cols-12 gap-x-[20px]"
+            >
+              <div
+                class="col-span-7 flex flex-col items-center justify-between"
+              >
+                <div class="h-auto w-[340px] overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/title.jpg"}
+                    alt="The Floss"
+                    width={1476}
+                    height={1024}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[320px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/mockup-chocolate.jpg"}
+                    alt="Other project 1"
+                    width={608}
+                    height={320}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+              <div
+                class="col-span-5 grid grid-cols-3 gap-x-[10px] gap-y-[22px]"
+              >
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/1.jpg"}
+                    alt="Other project 1"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/2.jpg"}
+                    alt="Other project 2"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/3.jpg"}
+                    alt="Other project 3"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/4.jpg"}
+                    alt="Other project 4"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/5.jpg"}
+                    alt="Other project 5"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/6.jpg"}
+                    alt="Other project 6"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/7.jpg"}
+                    alt="Other project 7"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/8.jpg"}
+                    alt="Other project 8"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="h-[170px] w-full overflow-hidden">
+                  <Image
+                    src={"/images/other/the-floss/9.jpg"}
+                    alt="Other project 9"
+                    width={136}
+                    height={170}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+            >
+              <Image
+                src={"/images/other/1.png"}
+                alt="Other project "
+                width={1056}
+                height={556}
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div
+              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+            >
+              <Image
+                src={"/images/other/2.png"}
+                alt="Other project "
+                width={1056}
+                height={556}
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div
+              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+            >
+              <Image
+                src={"/images/other/3.png"}
+                alt="Other project "
+                width={1056}
+                height={556}
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div
+              class="mr-[28px] h-[556px] w-[1056px] shrink-0 overflow-hidden"
+            >
+              <Image
+                src={"/images/other/4.png"}
+                alt="Other project "
+                width={1056}
+                height={556}
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="mr-[28px] h-[556px] w-[300px] shrink-0 overflow-hidden">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const wrapper = document.querySelector("[data-horizontal-wrapper]");
+  const scroller = document.querySelector("[data-horizontal]");
+
+  if (wrapper && scroller) {
+    const totalWidth = scroller.scrollWidth;
+    const viewportWidth = window.innerWidth;
+    const scrollDistance = totalWidth - viewportWidth;
+
+    gsap.to(scroller, {
+      x: () => `-${scrollDistance}px`,
+      ease: "none",
+      scrollTrigger: {
+        trigger: wrapper,
+        start: "top top",
+        end: () => `+=${scrollDistance}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
+  }
+</script>
