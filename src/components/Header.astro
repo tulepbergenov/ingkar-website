@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+const { title, backNavLink } = Astro.props;
 ---
 
 <header class="fixed top-0 left-0 z-20 w-full mix-blend-difference">
@@ -53,9 +53,9 @@ const { title } = Astro.props;
       </li>
       <li class="flex w-fit">
         <a
-          href="/about"
+          href={backNavLink === "about" ? "/about" : "/"}
           class="inline-block w-fit text-[42px] leading-[90%] font-bold uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
-          >About</a
+          >{backNavLink === "about" ? "About" : "Home"}</a
         >
       </li>
     </ul>
