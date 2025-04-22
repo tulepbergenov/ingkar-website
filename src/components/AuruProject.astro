@@ -2,9 +2,55 @@
 import { Image } from "astro:assets";
 ---
 
-<section class="mt-[100px]">
+<section class="mt-[48px] lg:mt-[100px]">
   <div class="container">
-    <div>
+    <div class="lg:hidden">
+      <div class="grid grid-cols-6 gap-x-[20px]">
+        <div class="col-span-2 uppercase">
+          <h2 class="font-bold">Auru</h2>
+          <div
+            class="mt-[6px] flex flex-col gap-y-[10px] pl-[12px] text-[12px]"
+          >
+            <p>type design</p>
+            <p>FILM</p>
+            <p>2024</p>
+          </div>
+        </div>
+        <div class="col-span-4">
+          <p>type design for an upcoming movie</p>
+          <p>my role was to develop a font based on the logo</p>
+          <p>linocut technique was used</p>
+        </div>
+        <div class="col-span-6 mt-[6px]">
+          <img
+            src={"/images/auru/text.gif"}
+            width={378}
+            height={152}
+            alt={"Auru typography"}
+            class="h-auto w-full"
+          />
+        </div>
+        <div class="col-span-6 mt-[6px]">
+          <img
+            src={"/images/auru/poster.gif"}
+            width={339}
+            height={424}
+            alt="Auru poster"
+            class="h-auto w-full"
+          />
+        </div>
+        <div class="col-span-6 mt-[6px]">
+          <Image
+            src="/images/auru/auru-title.jpg"
+            width={338}
+            height={190}
+            alt="Auru title"
+            class="h-auto w-full"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block">
       <div class="grid grid-cols-4 items-start gap-x-[20px] uppercase">
         <div
           class="group relative flex w-fit items-center justify-center align-top"

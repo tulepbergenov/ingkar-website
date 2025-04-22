@@ -1,13 +1,12 @@
 ---
-const { title, backNavLink } = Astro.props;
+const { backNavLink } = Astro.props;
 ---
 
-<header class="fixed top-0 left-0 z-20 w-full mix-blend-difference">
+<header
+  class="fixed top-0 left-0 z-20 hidden w-full mix-blend-difference lg:block"
+>
   <div class="container">
-    <div
-      class="flex items-center justify-between py-[28px] md:translate-y-[64px] md:py-0"
-    >
-      <p class="max-w-[140px] font-bold uppercase md:hidden">{title}</p>
+    <div class="flex translate-y-[64px] items-center justify-between py-0">
       <button
         type="button"
         data-menu-btn

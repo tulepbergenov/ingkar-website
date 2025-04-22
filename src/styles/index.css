@@ -113,7 +113,7 @@
 }
 
 @utility container {
-  @apply mx-auto max-w-[1448px] px-[20px] lg:px-[196px];
+  @apply mx-auto max-w-[1448px] px-[10px] lg:px-[196px];
 }
 
 @layer base {

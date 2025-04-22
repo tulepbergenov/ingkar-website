@@ -1,6 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import MobileHeader from "@/components/MobileHeader.astro";
 import SkipLink from "@/components/SkipLink.astro";
 import Layout from "@/layouts/Layout.astro";
 
@@ -10,8 +11,8 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout>
   <div class="flex h-full flex-col">
-    <Header title="About" backNavLink="home" />
-    <section>
+    <Header backNavLink="home" />
+    <section class="hidden lg:block">
       <div id="fixed-container" class="container">
         <div class="relative">
           <a
@@ -31,19 +32,29 @@ import Layout from "@/layouts/Layout.astro";
       </div>
     </section>
     <SkipLink />
-    <main id="main" class="flex-auto pt-[154px]" aria-label="Main content">
+    <MobileHeader reverse />
+    <main
+      id="main"
+      class="pt-[138px] lg:flex-auto lg:pt-[154px]"
+      aria-label="Main content"
+    >
       <section>
         <div class="container">
-          <div class="flex flex-col gap-y-[48px] uppercase">
+          <div
+            class="flex flex-col gap-y-[34px] lowercase lg:gap-y-[48px] lg:uppercase"
+          >
             <h1 class="sr-only font-bold md:not-sr-only">About</h1>
-            <div class="text-[24px] leading-[227%] md:leading-[90%]">
-              <p class="font-bold">
-                Ingkar is a graphic designer from Astana (kazakhstan).
+            <div
+              class="max-w-[300px] leading-[90%] lg:max-w-none lg:text-[24px]"
+            >
+              <p class="lg:font-bold">
+                Ingkar is a graphic <br class="lg:hidden" /> designer from Astana
+                (kazakhstan).
               </p>
               <p>Interested in lettering, branding, illustration.</p>
             </div>
-            <div class="text-[24px] leading-[227%] md:leading-[90%]">
-              <p class="font-bold">experience</p>
+            <div class="leading-[90%] lg:text-[24px]">
+              <p class="lg:font-bold">experience</p>
               <p>freelance 2023+</p>
             </div>
           </div>

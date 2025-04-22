@@ -3,8 +3,8 @@ import AuruProject from "@/components/AuruProject.astro";
 import CafeJosefProject from "@/components/CafeJosefProject.astro";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import MobileHeader from "@/components/MobileHeader.astro";
 import NexusProject from "@/components/NexusProject.astro";
-import OtherProject from "@/components/OtherProject.astro";
 import S23Project from "@/components/S23Project.astro";
 import SkipLink from "@/components/SkipLink.astro";
 import ToTheTop from "@/components/ToTheTop.astro";
@@ -16,8 +16,10 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout>
   <div class="flex h-full flex-col">
-    <Header title="Ingkar Abdrakhman" backNavLink="about" />
-    <section>
+    <Header backNavLink="about" />
+    <MobileHeader />
+    <h1 class="sr-only">Inkar Abdrakhman</h1>
+    <section class="hidden lg:block">
       <div id="fixed-container" class="container">
         <div class="relative">
           <a
@@ -37,24 +39,27 @@ import Layout from "@/layouts/Layout.astro";
       </div>
     </section>
     <SkipLink />
-    <main id="main" class="flex-auto pt-[154px]" aria-label="Main content">
+    <main
+      id="main"
+      class="pt-[138px] lg:flex-auto lg:pt-[154px]"
+      aria-label="Main content"
+    >
       <NexusProject />
       <AuruProject />
       <CafeJosefProject />
       <S23Project />
-      <!-- <OtherProject /> -->
-      <section class="mt-[60px]">
+      <section class="mt-[60px] hidden lg:block">
         <div class="container">
           <div class="flex justify-end">
             <ToTheTop />
           </div>
         </div>
       </section>
-      <section class="mt-[60px]">
+      <section class="mt-[30px] lg:mt-[60px]">
         <div class="container">
           <div>
             <h2
-              class="font-bold uppercase lg:text-[50px] xl:text-[70px] [@media(min-width:1400px)]:text-[80px]"
+              class="text-[7.2vw] leading-[90%] font-bold uppercase lg:text-[50px] xl:text-[70px] [@media(min-width:1400px)]:text-[80px]"
             >
               let’s work together
             </h2>

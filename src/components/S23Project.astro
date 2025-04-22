@@ -2,9 +2,32 @@
 import { Image } from "astro:assets";
 ---
 
-<section class="mt-[150px]">
+<section class="lg:mt-[150px] lg:py-0">
   <div class="container">
-    <div>
+    <div class="py-[30px] lg:hidden">
+      <div class="grid grid-cols-6 gap-x-[20px]">
+        <div class="col-span-2 uppercase">
+          <h2 class="font-bold">s23</h2>
+          <div
+            class="mt-[6px] flex flex-col gap-y-[10px] pl-[12px] text-[12px]"
+          >
+            <p>
+              product design <br /> visual identity
+            </p>
+            <p>university</p>
+            <p>2022</p>
+          </div>
+        </div>
+        <div class="col-span-4">
+          <p>
+            S23 is a conceptual sustainable brand the brand's aesthetic is
+            heavily inspired by graffiti culture custom font was developed as a
+            part of the project
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block">
       <div class="grid grid-cols-12 items-start gap-x-[20px] uppercase">
         <div class="group relative col-span-3 flex w-fit" data-s23-open="false">
           <button
@@ -99,7 +122,7 @@ import { Image } from "astro:assets";
         </div>
         <div class="col-span-3 h-[350px]">
           <Image
-            src={"/images/s23/2.jpg"}
+            src={"/images/s23/2.webp"}
             width={248}
             height={350}
             alt="S23"
@@ -117,6 +140,36 @@ import { Image } from "astro:assets";
         </div>
       </div>
     </div>
+  </div>
+  <div class="container bg-black pb-[30px] lg:hidden">
+    <Image
+      src={"/images/s23/4.webp"}
+      width={248}
+      height={350}
+      alt="S23"
+      class="h-full w-full"
+    />
+    <Image
+      src={"/images/s23/5.webp"}
+      width={248}
+      height={350}
+      alt="S23"
+      class="h-full w-full"
+    />
+    <Image
+      src={"/images/s23/7.svg"}
+      width={516}
+      height={215}
+      alt="S23"
+      class="mt-[20px] h-full w-full"
+    />
+    <Image
+      src={"/images/s23/2.webp"}
+      width={248}
+      height={350}
+      alt="S23"
+      class="mt-[20px] h-full w-full"
+    />
   </div>
 </section>
 
